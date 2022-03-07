@@ -34,6 +34,7 @@ typedef struct s_stacks
 	struct s_linkedList	*stack_b;
 }				t_stacks;
 
+void				ft_free_links(struct s_linkedList *stack);
 int					ft_duplicate(struct s_linkedList *stack, int num);
 void				ft_sort_small_stack(struct s_stacks *stacks);
 int					ft_size(struct s_linkedList *stack);

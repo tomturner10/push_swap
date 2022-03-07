@@ -9,7 +9,7 @@ SRCS =	push_swap.c \
 		small_sort.c \
 		normalize.c
 
-FLAGS = -Werror -Wextra -Wall
+FLAGS = -Werror -Wextra -Wall -g
 
 all: $(NAME)
 

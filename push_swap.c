@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Includes/push_swap.h"
-#include <stdio.h>
 
 t_stacks	*ft_init_stacks(char **argv)
 {
@@ -47,5 +46,10 @@ int	main(int argc, char **argv)
 		ft_sort_small_stack(stacks);
 	else
 		ft_sort_large_stack(stacks);
+	ft_free_links(stacks->stack_a);
+	ft_free_links(stacks->stack_b);
+	free(stacks->stack_a);
+	free(stacks->stack_b);
+	free(stacks);
 	return (0);
 }

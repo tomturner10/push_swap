@@ -45,21 +45,20 @@ t_link	*ft_last(t_linkedList *stack)
 	return (hold);
 }
 
-t_link	*ft_get_index(t_linkedList *stack, int index)
+void	ft_free_links(t_linkedList *stack)
 {
-	int		i;
 	t_link	*hold;
+	t_link	*temp;
 
-	i = 0;
 	hold = stack->top;
-	while (hold->next != NULL && i < index)
+	while (hold != NULL && hold->next != NULL)
 	{
+		temp = hold;
 		hold = hold->next;
-		i++;
+		free(temp);
 	}
-	if (i != index - 1)
-		return (NULL);
-	return (hold);
+	free(hold);
+	stack->top = NULL;
 }
 
 int	ft_duplicate(t_linkedList *stack, int num)
