@@ -21,8 +21,8 @@ t_stacks	*ft_init_stacks(char **argv)
 	stacks->stack_b = ft_init_linked_list();
 	while (*argv)
 	{
-		if (!ft_duplicate(stacks->stack_a, ft_atoi(*argv))
-			|| !ft_is_valid(*argv))
+		if (!ft_is_valid(*argv)
+			|| !ft_duplicate(stacks->stack_a, ft_atoi(*argv)))
 		{
 			write(1, "Error\n", 6);
 			exit(-1);

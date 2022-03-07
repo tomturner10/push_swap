@@ -21,10 +21,10 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-static int	chartoint(int neg, char *num, int len)
+static long	chartoint(int neg, char *num, int len)
 {
-	int	rtn;
-	int	power;
+	long	rtn;
+	int		power;
 
 	power = 1;
 	rtn = 0;
@@ -39,7 +39,7 @@ static int	chartoint(int neg, char *num, int len)
 	return (rtn);
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		j;
@@ -68,8 +68,12 @@ int	ft_atoi(const char *nptr)
 
 int	ft_is_valid(char *str)
 {
-	int	i;
+	int		i;
+	int		len;
+	long	num;
 
+	len = ft_strlen(str);
+	num = ft_atoi(str);
 	i = 0;
 	while (str[i])
 	{
@@ -77,5 +81,7 @@ int	ft_is_valid(char *str)
 			return (0);
 		i++;
 	}
+	if (len > 11 || num < -2147483648 || num > 2147483647)
+		return (0);
 	return (1);
 }
